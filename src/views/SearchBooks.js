@@ -43,7 +43,7 @@ const SearchBooks = ({ Books, updateShelf, updateExistBooks }) => {
         //if the search returns books, set the books state to the books array
 
         const filterBooks = books.map((item) => {
-          const match = Books.find((item2) => item2.title === item.title);
+          const match = Books.find((item2) => item2.id === item.id);
           if (match !== undefined)
             return { ...item, shelf: match.shelf, exists: true };
           else return { ...item, exists: false };
